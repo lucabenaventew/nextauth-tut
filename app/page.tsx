@@ -1,3 +1,11 @@
+import Link from "next/link";
+
 export default function Home() {
-	return <h1>Se vienen cositas</h1>
+	return (
+	<main className="flex w-screen justify-center h-screen">
+		<button>
+			<Link href={'/login'}>toca aki</Link>
+		</button>
+	</main>
+	)
 }

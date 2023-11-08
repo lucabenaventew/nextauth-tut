@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import Logout from './logout'
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({ weight: '400', subsets: ['greek'] })
 
 export const metadata: Metadata = {
 	title: 'lucabenaventew',
@@ -20,7 +20,7 @@ export default async function RootLayout({
 	const session = await getServerSession()
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={roboto.className}>
 				<nav>
 					{!!session && <Logout />}
 					{!session && <Link href={'/login'}>login</Link>}
